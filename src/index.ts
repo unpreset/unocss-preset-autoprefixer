@@ -20,8 +20,8 @@ export default function autoprefixerPreset(): Preset {
 
 const hyphenate = (str: string) => str.replace(/(?:^|\B)([A-Z])/g, '-$1').toLowerCase()
 
-function genEntries(obj: Record<string, string[] | string>) {
-  const res: Array<[string, string]> = []
+function genEntries(obj: Record<string, string[] | string | number>) {
+  const res: Array<[string, string | number]> = []
 
   Object.keys(obj).forEach((key) => {
     const values = obj[key]
@@ -29,7 +29,7 @@ function genEntries(obj: Record<string, string[] | string>) {
       values.forEach((v: string) => {
         res.push([hyphenate(key), v])
       })
-    } else if (typeof values === 'string') {
+    } else if (typeof values === 'string' || typeof values === 'number') {
       res.push([hyphenate(key), values])
     }
   })
