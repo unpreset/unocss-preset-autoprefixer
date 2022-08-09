@@ -1,5 +1,5 @@
 # unocss-preset-autoprefixer
-
+[![npm version](https://badge.fury.io/js/unocss-preset-autoprefixer.svg)](https://badge.fury.io/js/unocss-preset-autoprefixer)
 ## Installation
 
 ```ts
