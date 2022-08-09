@@ -8,7 +8,12 @@ export default function autoprefixerPreset(): Preset {
   return {
     name: 'unocss-preset-autoprefixer',
     postprocess: (util) => {
-      util.entries = genEntries(prefixer(Object.fromEntries(util.entries)))
+      const entries = util.entries
+
+      util.entries = [
+        ...entries.filter((item) => item[0].startsWith('--un')),
+        ...genEntries(prefixer(Object.fromEntries(entries.filter((item) => !item[0].startsWith('--un'))))),
+      ]
     },
   }
 }
@@ -21,7 +26,7 @@ function genEntries(obj: Record<string, string[] | string>) {
   Object.keys(obj).forEach((key) => {
     const values = obj[key]
     if (Array.isArray(values)) {
-     values.forEach((v: string) => {
+      values.forEach((v: string) => {
         res.push([hyphenate(key), v])
       })
     } else if (typeof values === 'string') {
