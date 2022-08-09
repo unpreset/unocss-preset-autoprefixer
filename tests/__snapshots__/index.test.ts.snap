@@ -1,0 +1,24 @@
+// Vitest Snapshot v1
+
+exports[`preset-prefixer > background gradient 1`] = `
+"/* layer: default */
+.from-purple-500{--un-gradient-from:rgba(168,85,247,var(--un-from-opacity, 1));--un-gradient-to:rgba(168,85,247,0);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}
+.to-pink-500{--un-gradient-to:rgba(236,72,153,var(--un-to-opacity, 1));}
+.bg-gradient-to-tr{--un-gradient-shape:to top right;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);background-image:-webkit-linear-gradient(var(--un-gradient));background-image:linear-gradient(var(--un-gradient));}"
+`;
+
+exports[`preset-prefixer > flex autoprefixer 1`] = `
+"/* layer: default */
+.flex{display:-webkit-box;display:-webkit-flex;display:flex;}"
+`;
+
+exports[`preset-prefixer > font weight 1`] = `
+"/* layer: default */
+.font-400{font-weight:400;}
+.font-bold{font-weight:700;}"
+`;
+
+exports[`preset-prefixer > text space 1`] = `
+"/* layer: default */
+.text-1{font-size:0.25rem;}"
+`;

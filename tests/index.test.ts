@@ -5,16 +5,30 @@ import presetPrefixer from '../src'
 
 describe('preset-prefixer', () => {
   const uno = createGenerator({
-    presets: [
-      presetUno(),
-      presetPrefixer()
-    ],
+    presets: [presetUno(), presetPrefixer()],
   })
 
   test('flex autoprefixer', async () => {
+    const { css } = await uno.generate(['flex'], { preflights: false })
 
-    const { css } = await uno.generate(['flex'], { preflights: false})
+    expect(css).toMatchSnapshot()
+  })
 
-    expect(css).toBe(`/* layer: default */\n.flex{display:-webkit-box;display:-webkit-flex;display:flex;}`)
+  test('text space', async () => {
+    const { css } = await uno.generate(['text-1'], { preflights: false })
+
+    expect(css).toMatchSnapshot()
+  })
+
+  test('font weight', async () => {
+    const { css } = await uno.generate(['font-400', 'font-bold'], { preflights: false })
+
+    expect(css).toMatchSnapshot()
+  })
+
+  test('background gradient', async () => {
+    const { css } = await uno.generate(['bg-gradient-to-tr', 'from-purple-500', 'to-pink-500'], { preflights: false })
+
+    expect(css).toMatchSnapshot()
   })
 })
