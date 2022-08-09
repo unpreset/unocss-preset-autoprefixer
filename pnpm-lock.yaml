@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/postcss-js': ^4.0.0
+  '@unocss/preset-uno': ^0.45.5
   autoprefixer: ^10.4.8
   postcss-js: ^4.0.0
   typescript: ^4.7.4
@@ -11,6 +12,7 @@ specifiers:
 
 devDependencies:
   '@types/postcss-js': 4.0.0
+  '@unocss/preset-uno': 0.45.5
   autoprefixer: 10.4.8
   postcss-js: 4.0.0
   typescript: 4.7.4
