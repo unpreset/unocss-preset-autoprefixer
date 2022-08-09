@@ -9,21 +9,23 @@ export default function autoprefixerPreset(): Preset {
     name: 'unocss-preset-autoprefixer',
     postprocess: (util) => {
       util.entries = genEntries(prefixer(Object.fromEntries(util.entries)))
-    }
+    },
   }
 }
 
 const hyphenate = (str: string) => str.replace(/(?:^|\B)([A-Z])/g, '-$1').toLowerCase()
 
-function genEntries(obj: Record<string, any>) {
-  const res:Array<[string, string]> = []
-  Object.keys(obj).forEach(key => {
-    if (Array.isArray(obj[key])) {
-      obj[key].forEach(v => {
+function genEntries(obj: Record<string, string[] | string>) {
+  const res: Array<[string, string]> = []
+
+  Object.keys(obj).forEach((key) => {
+    const values = obj[key]
+    if (Array.isArray(values)) {
+     values.forEach((v: string) => {
         res.push([hyphenate(key), v])
       })
-    } else if (typeof obj[key] === 'string') {
-      res.push([hyphenate(key), obj[key]])
+    } else if (typeof values === 'string') {
+      res.push([hyphenate(key), values])
     }
   })
 
