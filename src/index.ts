@@ -1,5 +1,4 @@
 import type { Preset } from 'unocss'
-import autoprefixer from 'autoprefixer'
 import { transformStyleAttribute, browserslistToTargets } from 'lightningcss'
 import browserslist from 'browserslist'
 
