@@ -1,38 +1,29 @@
 import type { Preset } from 'unocss'
-import postcss from 'postcss-js'
 import autoprefixer from 'autoprefixer'
+import { transformStyleAttribute, browserslistToTargets } from 'lightningcss'
+import browserslist from 'browserslist'
 
-const prefixer = postcss.sync([autoprefixer])
-
-export default function autoprefixerPreset(): Preset {
+export default function autoprefixerPreset(targets: string[] = [
+  ">= 0.25%",
+  "last 2 versions",
+  "not dead",
+  "not ie <= 11",
+  "Android >= 4.0",
+  "iOS >= 8"
+]): Preset {
   return {
     name: 'unocss-preset-autoprefixer',
     postprocess: (util) => {
       const entries = util.entries
-
+      const { code } = transformStyleAttribute({
+        code: Buffer.from(`${entries.filter((item) => !item[0].startsWith('--un')).map(x => x.join(":"))}`),
+        targets: browserslistToTargets(browserslist(targets))
+      })
+      
       util.entries = [
         ...entries.filter((item) => item[0].startsWith('--un')),
-        ...genEntries(prefixer(Object.fromEntries(entries.filter((item) => !item[0].startsWith('--un'))))),
+        ...code.toString().split(';').map(i => i.split(':').map(j => j.replace(/\s/g, ''))) as [string, string | number][],
       ]
     },
   }
-}
-
-const hyphenate = (str: string) => str.replace(/(?:^|\B)([A-Z])/g, '-$1').toLowerCase()
-
-function genEntries(obj: Record<string, string[] | string | number>) {
-  const res: Array<[string, string | number]> = []
-
-  Object.keys(obj).forEach((key) => {
-    const values = obj[key]
-    if (Array.isArray(values)) {
-      values.forEach((v: string) => {
-        res.push([hyphenate(key), v])
-      })
-    } else if (typeof values === 'string' || typeof values === 'number') {
-      res.push([hyphenate(key), values])
-    }
-  })
-
-  return res
 }
