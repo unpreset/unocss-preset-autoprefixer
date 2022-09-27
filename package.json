@@ -1,6 +1,6 @@
 {
   "name": "unocss-preset-autoprefixer",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "unocss-preset",
   "main": "./dist/index.cjs",
   "scripts": {
@@ -36,9 +36,11 @@
   ],
   "peerDependencies": {
     "lightningcss": "^1.16.0",
+    "browserslist": "^4.21.3",
     "unocss": "^0.45.5"
   },
   "devDependencies": {
+    "@types/node": "^18.7.23",
     "@types/postcss-js": "^4.0.0",
     "@unocss/preset-uno": "^0.45.5",
     "browserslist": "^4.21.3",

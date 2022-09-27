@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-pnpm add postcss-js autoprefixer unocss-preset-autoprefixer -D
+pnpm add lightningcss browserslist -D
 ```
 
 ```ts
