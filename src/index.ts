@@ -15,13 +15,14 @@ export default function autoprefixerPreset(targets: string[] = [
     postprocess: (util) => {
       const entries = util.entries
       const { code } = transformStyleAttribute({
-        code: Buffer.from(`${entries.filter((item) => !item[0].startsWith('--un')).map(x => x.join(":"))}`),
-        targets: browserslistToTargets(browserslist(targets))
+        code: Buffer.from(entries.filter((item) => !item[0].startsWith('--un')).map(x => x.join(":")).join(';')),
+        targets: browserslistToTargets(browserslist(targets)),
+        minify: true
       })
       
       util.entries = [
         ...entries.filter((item) => item[0].startsWith('--un')),
-        ...code.toString().split(';').map(i => i.split(':').map(j => j.replace(/\s/g, ''))) as [string, string | number][],
+        ...code.toString().split(';').map(i => i.split(':')) as [string, string | number][],
       ]
     },
   }

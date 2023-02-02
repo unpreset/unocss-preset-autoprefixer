@@ -18,6 +18,21 @@ exports[`preset-prefixer > font weight 1`] = `
 .font-bold{font-weight:700;}"
 `;
 
+exports[`preset-prefixer > p-x 1`] = `
+"/* layer: default */
+.px-10{padding-left:2.5rem;padding-right:2.5rem;}"
+`;
+
+exports[`preset-prefixer > px 1`] = `
+"/* layer: default */
+.px-10{padding-left:2.5rem;padding-right:2.5rem;}"
+`;
+
+exports[`preset-prefixer > space-x 1`] = `
+"/* layer: default */
+.space-x-10>:not([hidden])~:not([hidden]){--un-space-x-reverse:0;margin-left:calc(2.5rem*calc(1 - var(--un-space-x-reverse)));margin-right:calc(2.5rem*var(--un-space-x-reverse));}"
+`;
+
 exports[`preset-prefixer > text space 1`] = `
 "/* layer: default */
 .text-1{font-size:.25rem;}"

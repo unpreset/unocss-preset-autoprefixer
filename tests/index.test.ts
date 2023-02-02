@@ -31,4 +31,15 @@ describe('preset-prefixer', () => {
 
     expect(css).toMatchSnapshot()
   })
+
+  test('p-x', async () => {
+    const { css } = await uno.generate(['px-10'], { preflights: false })
+
+    expect(css).toMatchSnapshot()
+  })
+  test('space-x', async () => {
+    const { css } = await uno.generate(['space-x-10'], { preflights: false })
+
+    expect(css).toMatchSnapshot()
+  })
 })
