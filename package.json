@@ -35,9 +35,9 @@
     "dist"
   ],
   "peerDependencies": {
-    "lightningcss": "^1.16.0",
-    "browserslist": "^4.21.3",
-    "unocss": "^0.45.5"
+    "lightningcss": ">=1.16.0",
+    "browserslist": ">=4.21.3",
+    "unocss": ">=0.45.5"
   },
   "devDependencies": {
     "@types/node": "^18.7.23",
