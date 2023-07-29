@@ -1,7 +1,7 @@
 # unocss-preset-autoprefixer
 > :exclamation: from v0.0.4 this lib use `lightningcss` to generate css prefixer. Before this version, it used `postcss-js`  
 
-[![npm version](https://badge.fury.io/js/unocss-preset-autoprefixer.svg)](https://badge.fury.io/js/unocss-preset-autoprefixer)
+[![npm version](https://badge.fury.io/js/unocss-preset-autoprefixer.svg?v=20230729)](https://badge.fury.io/js/unocss-preset-autoprefixer)
 
 ## Installation
 
