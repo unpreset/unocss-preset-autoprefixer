@@ -6,7 +6,7 @@
 ## Installation
 
 ```bash
-pnpm add lightningcss browserslist -D
+pnpm add lightningcss browserslist unocss-preset-autoprefixer -D
 ```
 
 ```ts
