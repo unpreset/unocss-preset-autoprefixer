@@ -13,6 +13,8 @@ export default function autoprefixerPreset(targets: string[] = [
   return {
     name: 'unocss-preset-autoprefixer',
     postprocess: (util) => {
+      if (process?.argv0?.endsWith('Code Helper (Plugin)')) return
+
       const entries = util.entries
       const { code } = transformStyleAttribute({
         code: Buffer.from(entries.filter((item) => !item[0].startsWith('--un')).map(x => x.join(":")).join(';')),
@@ -22,7 +24,7 @@ export default function autoprefixerPreset(targets: string[] = [
       
       util.entries = [
         ...entries.filter((item) => item[0].startsWith('--un')),
-        ...code.toString().split(';').map(i => i.split(':')) as [string, string | number][],
+        ...!!code.toString() ? code.toString().split(';').map(i => i.split(':')) as [string, string | number][] : [],
       ]
     },
   }

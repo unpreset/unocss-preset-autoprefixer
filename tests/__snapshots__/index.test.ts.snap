@@ -1,9 +1,9 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`preset-prefixer > background gradient 1`] = `
 "/* layer: default */
-.from-purple-500{--un-gradient-from:rgba(168,85,247,var(--un-from-opacity, 1));--un-gradient-to:rgba(168,85,247,0);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}
-.to-pink-500{--un-gradient-to:rgba(236,72,153,var(--un-to-opacity, 1));}
+.from-purple-500{--un-gradient-from-position:0%;--un-gradient-from:rgb(168 85 247 / var(--un-from-opacity, 1)) var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(168 85 247 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}
+.to-pink-500{--un-gradient-to-position:100%;--un-gradient-to:rgb(236 72 153 / var(--un-to-opacity, 1)) var(--un-gradient-to-position);}
 .bg-gradient-to-tr{--un-gradient-shape:to top right;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);background-image:linear-gradient(var(--un-gradient));}"
 `;
 
@@ -19,11 +19,6 @@ exports[`preset-prefixer > font weight 1`] = `
 `;
 
 exports[`preset-prefixer > p-x 1`] = `
-"/* layer: default */
-.px-10{padding-left:2.5rem;padding-right:2.5rem;}"
-`;
-
-exports[`preset-prefixer > px 1`] = `
 "/* layer: default */
 .px-10{padding-left:2.5rem;padding-right:2.5rem;}"
 `;
