@@ -1,6 +1,6 @@
 {
   "name": "unocss-preset-autoprefixer",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "unocss-preset",
   "main": "./dist/index.cjs",
   "scripts": {
