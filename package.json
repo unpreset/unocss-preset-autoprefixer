@@ -40,15 +40,15 @@
     "unocss": ">=0.45.5"
   },
   "devDependencies": {
-    "@types/node": "^20.8.8",
-    "@types/postcss-js": "^4.0.3",
-    "@unocss/preset-uno": "^0.57.1",
-    "browserslist": "^4.22.1",
-    "lightningcss": "^1.22.0",
-    "typescript": "^5.2.2",
+    "@types/node": "^22.4.2",
+    "@types/postcss-js": "^4.0.4",
+    "@unocss/preset-uno": "^0.62.2",
+    "browserslist": "^4.23.3",
+    "lightningcss": "^1.26.0",
+    "typescript": "^5.5.4",
     "unbuild": "^2.0.0",
-    "unocss": "^0.57.1",
-    "vitest": "^0.34.6"
+    "unocss": "^0.62.2",
+    "vitest": "^2.0.5"
   },
   "browserslist": [
     "> 1%",
