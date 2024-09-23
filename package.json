@@ -1,7 +1,7 @@
 {
   "name": "unocss-preset-autoprefixer",
   "type": "module",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "packageManager": "pnpm@9.11.0",
   "description": "unocss preset for autoprefixer",
   "author": "zouhang <https://github.com/zouhangwithsweet>",
