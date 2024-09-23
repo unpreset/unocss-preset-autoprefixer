@@ -1,54 +1,74 @@
 {
   "name": "unocss-preset-autoprefixer",
+  "type": "module",
   "version": "0.0.7",
-  "description": "unocss-preset",
-  "main": "./dist/index.cjs",
-  "scripts": {
-    "build": "unbuild",
-    "stub": "unbuild --stub",
-    "test": "vitest"
-  },
+  "packageManager": "pnpm@9.11.0",
+  "description": "unocss preset for autoprefixer",
+  "author": "zouhang <https://github.com/zouhangwithsweet>",
+  "license": "MIT",
+  "homepage": "https://github.com/unpreset/unocss-preset-autoprefixer#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zouhangwithsweet/unocss-preset-autoprefixer.git"
+    "url": "git+https://github.com/unpreset/unocss-preset-autoprefixer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/unpreset/unocss-preset-autoprefixer/issues"
   },
   "keywords": [
-    "unocss"
+    "unocss",
+    "unpreset",
+    "unocss-preset",
+    "unocss-preset-autoprefixer"
   ],
-  "author": "zouhang",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/zouhangwithsweet/unocss-preset-autoprefixer/issues"
-  },
-  "homepage": "https://github.com/zouhangwithsweet/unocss-preset-autoprefixer#readme",
   "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     }
   },
+  "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
   "files": [
     "dist"
   ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "prepublishOnly": "pnpm run build",
+    "release": "bumpp --commit --push --tag && pnpm publish",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest",
+    "test:update": "vitest --update",
+    "play": "pnpm -C playground run dev"
+  },
   "peerDependencies": {
     "browserslist": ">=4.21.3",
     "lightningcss": ">=1.16.0",
     "unocss": ">=0.45.5"
   },
   "devDependencies": {
-    "@types/node": "^22.4.2",
+    "@antfu/eslint-config": "^3.7.1",
+    "@types/node": "^22.5.5",
     "@types/postcss-js": "^4.0.4",
-    "@unocss/preset-uno": "^0.62.2",
+    "@unocss/preset-uno": "^0.62.4",
     "browserslist": "^4.23.3",
-    "lightningcss": "^1.26.0",
-    "typescript": "^5.5.4",
+    "lightningcss": "^1.27.0",
+    "typescript": "5.5.4",
     "unbuild": "^2.0.0",
-    "unocss": "^0.62.2",
-    "vitest": "^2.0.5"
+    "unocss": "^0.62.4",
+    "vitest": "^2.1.1"
   },
   "browserslist": [
     "> 1%",

@@ -9,5 +9,5 @@ export default defineBuildConfig({
   rollup: {
     emitCJS: true,
   },
-  externals: ['lightningcss', 'browserslist']
+  externals: ['lightningcss', 'browserslist'],
 })
