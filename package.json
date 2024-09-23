@@ -64,6 +64,7 @@
     "@types/postcss-js": "^4.0.4",
     "@unocss/preset-uno": "^0.62.4",
     "browserslist": "^4.23.3",
+    "bumpp": "^9.5.2",
     "lightningcss": "^1.27.0",
     "typescript": "5.5.4",
     "unbuild": "^2.0.0",
